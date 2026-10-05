@@ -24,3 +24,5 @@ html,body,#root{min-height:100%;margin:0}html,body{overflow-y:auto}#root{overflo
 .picture-none{width:100px;height:80px;display:flex;align-items:center;justify-content:center}
 
 .services-heading{display:flex;align-items:center;gap:8px}
+
+.name-field{display:flex;flex-direction:column;gap:4px;min-width:0}.form-row:has(.name-field){align-items:start}.form-row:has(.name-field)>:first-child{padding-top:8px}
