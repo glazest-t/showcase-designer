@@ -1,5 +1,7 @@
 import React,{useState} from 'react';
-import {SidebarWindow,Text,Label,Button,Badge,Separator,Field,Textarea,WarningDialogWindow} from '@reactor/reactor';
+import {Text,Label,Button,Badge,Separator,Field,Textarea,WarningDialogWindow} from '@reactor/reactor';
+
+import SidebarWindow from './GuardedSidebar';
 
 const referenceDescription='[Описание услуги, которое скорее всего занимает целый абзац, потому чсто состоит из нескольких предложений. Возможна даже там есть список.]';
 
@@ -21,6 +23,6 @@ export default function ServiceDetails({service,onClose,onSave}){
     <div className="service-detail-row"><Label text="Где продаётся"/><div className="service-detail-channels"><Badge color="orange" text="TL:BE"/><Badge color="light-green" text="Витрина"/></div></div>
    </div>
   </SidebarWindow>
-  <WarningDialogWindow header="Закрыть без сохранения?" state={[confirm,setConfirm]} actions={{primary:{text:'Закрыть',onClick:onClose},cancel:{text:'Продолжить работу'}}}><Text text="Изменения услуги не сохранятся."/></WarningDialogWindow>
+  <WarningDialogWindow header="Сохранить изменения?" state={[confirm,setConfirm]} footer={<div className="unsaved-actions"><Button type="primary" text="Сохранить и закрыть" disabled={!name.trim()} onClick={()=>{onSave({...service,name:name.trim(),description});onClose()}}/><Button text="Закрыть без сохранения" onClick={onClose}/><Button text="Продолжить редактирование" onClick={()=>setConfirm(false)}/></div>}><Text text="В услуге есть несохранённые изменения. Сохранить их перед закрытием?"/></WarningDialogWindow>
  </>;
 }

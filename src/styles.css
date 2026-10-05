@@ -26,3 +26,5 @@ html,body,#root{min-height:100%;margin:0}html,body{overflow-y:auto}#root{overflo
 .services-heading{display:flex;align-items:center;gap:8px}
 
 .name-field{display:flex;flex-direction:column;gap:4px;min-width:0}.form-row:has(.name-field){align-items:start}.form-row:has(.name-field)>:first-child{padding-top:8px}
+
+.unsaved-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px}
