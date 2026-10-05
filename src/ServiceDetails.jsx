@@ -23,6 +23,6 @@ export default function ServiceDetails({service,onClose,onSave}){
     <div className="service-detail-row"><Label text="Где продаётся"/><div className="service-detail-channels"><Badge color="orange" text="TL:BE"/><Badge color="light-green" text="Витрина"/></div></div>
    </div>
   </SidebarWindow>
-  <WarningDialogWindow header="Сохранить изменения?" state={[confirm,setConfirm]} footer={<div className="unsaved-actions"><Button type="primary" text="Сохранить и закрыть" disabled={!name.trim()} onClick={()=>{onSave({...service,name:name.trim(),description});onClose()}}/><Button text="Закрыть без сохранения" onClick={onClose}/><Button text="Продолжить редактирование" onClick={()=>setConfirm(false)}/></div>}><Text text="В услуге есть несохранённые изменения. Сохранить их перед закрытием?"/></WarningDialogWindow>
+  <WarningDialogWindow header="Сохранить изменения?" state={[confirm,setConfirm]} footer={<div className="unsaved-actions"><Button type="primary" text="Сохранить и закрыть" disabled={!name.trim()} onClick={()=>{onSave({...service,name:name.trim(),description});onClose()}}/><Button text="Не сохранять" onClick={onClose}/></div>}><Text text="В услуге есть несохранённые изменения."/></WarningDialogWindow>
  </>;
 }
