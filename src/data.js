@@ -7,7 +7,7 @@ const groups={
  'Развлечения':['Экскурсия по городу','Дегустация вин','Мастер-класс по керамике','Детский клуб','Кино под открытым небом','Рыбалка с инструктором','Прогулка на катере']
 };
 const services=Object.entries(groups).flatMap(([group,names])=>names.map((name,i)=>({id:group+i,name,group})));
-const pictures=[['spa','СПА и уход'],['food','Питание'],['bath','Баня'],['pool','Бассейн'],['bike','Спорт и отдых'],['fitness','Фитнес'],['transfer','Трансфер']];
+const pictures=[['spa-v2','СПА · 3D'],['food-v2','Питание · 3D'],['bath-v2','Баня · 3D'],['pool-v2','Бассейн · 3D'],['bike-v2','Спорт · 3D'],['fitness-v2','Фитнес · 3D'],['transfer-v2','Трансфер · 3D'],['spa','СПА и уход'],['food','Питание'],['bath','Баня'],['pool','Бассейн'],['bike','Спорт и отдых'],['fitness','Фитнес'],['transfer','Трансфер']];
 const initial=[{name:'Питание',pic:'food',ids:services.filter(s=>s.group==='Питание').slice(0,3).map(s=>s.id),visible:true},{name:'СПА и развлечения',pic:'spa',ids:services.filter(s=>s.group==='СПА и уход').slice(0,2).map(s=>s.id),visible:true},{name:'Трансфер',pic:'transfer',ids:services.filter(s=>s.group==='Трансфер и парковка').slice(0,3).map(s=>s.id),visible:true},{name:'Развлечения',pic:'bike',ids:[],visible:false}];
 
 export {groups,services,pictures,initial};
