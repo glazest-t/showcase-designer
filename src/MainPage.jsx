@@ -16,7 +16,7 @@ export default function MainPage({sections,setSections,onEdit,onSaved}){
  return <>
   <main className="page">
    <div className="page-heading"><Text text="Настройки показа" typography="page-title"/><Text text="Задайте структуру и наполнение витрины, чтобы помочь гостям найти нужную услугу" typography="subtitle"/></div>
-   <div className="main-tile sections-tile"><Tile header={title('Разделы','Кнопки быстрого перехода к нужной группе услуг',<Button icon="add" text="Создать раздел" onClick={()=>onEdit()}/>)}>
+   <div className="main-tile sections-tile"><Tile header={title('Разделы','Кнопки быстрого перехода к предложениям на витрине',<Button icon="add" text="Создать раздел" onClick={()=>onEdit()}/>)}>
     <Table key={JSON.stringify(sections.map(s=>s.name))} width="100%" fixed draggable stickyNoTop head={{key:'sections-head',cells:[{content:'Видимость',width:108},{content:'Раздел',width:'39.23%'},{content:'Привязано услуг'},{content:'Действие',width:193,hAlign:'right'}]}} rows={sections.map((s,i)=>({key:s.name,cells:[
       <Switch hint={sectionHint} accent={s.visible} selected={s.visible} onClick={()=>{setSections(prev=>prev.map((v,j)=>i===j?{...v,visible:!v.visible}:v));onSaved()}}/>,
       <Link text={s.name} onClick={()=>onEdit(s,i)}/>,
