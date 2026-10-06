@@ -7,7 +7,7 @@ const groups={
  'Развлечения':['Экскурсия по городу','Дегустация вин','Мастер-класс по керамике','Детский клуб','Кино под открытым небом','Рыбалка с инструктором','Прогулка на катере']
 };
 const services=Object.entries(groups).flatMap(([group,names])=>names.map((name,i)=>({id:group+i,name,group})));
-const pictures=[['spa-v2','СПА и уход'],['food-v2','Питание'],['bath-v2','Баня'],['pool-v2','Бассейн'],['bike-v2','Спорт и отдых'],['fitness-v2','Фитнес'],['transfer-v2','Трансфер']];
+const pictures=[['spa-v2','СПА и уход'],['food-v2','Питание'],['bath-v2','Баня'],['pool-v2','Бассейн'],['bike-v2','Спорт и отдых'],['fitness-v2','Фитнес'],['transfer-v2','Трансфер'],['coffee-v2','Кофе'],['gift-v2','Подарок'],['beach-v2','Пляж'],['hiking-v2','Походы'],['tennis-v2','Теннис'],['kids-v2','Детям'],['pets-v2','Питомцы'],['parking-v2','Парковка'],['luggage-v2','Багаж'],['wine-v2','Дегустации'],['art-v2','Творчество'],['boat-v2','Прогулки на лодке'],['business-v2','Деловые услуги']];
 const initial=[{name:'Питание',pic:'food-v2',ids:services.filter(s=>s.group==='Питание').slice(0,3).map(s=>s.id),visible:true},{name:'СПА и развлечения',pic:'spa-v2',ids:services.filter(s=>s.group==='СПА и уход').slice(0,2).map(s=>s.id),visible:true},{name:'Трансфер',pic:'transfer-v2',ids:services.filter(s=>s.group==='Трансфер и парковка').slice(0,3).map(s=>s.id),visible:true},{name:'Развлечения',pic:'bike-v2',ids:[],visible:false}];
 
 export {groups,services,pictures,initial};

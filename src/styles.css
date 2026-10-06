@@ -28,3 +28,11 @@ html,body,#root{min-height:100%;margin:0}html,body{overflow-y:auto}#root{overflo
 .name-field{display:flex;flex-direction:column;gap:4px;min-width:0}.form-row:has(.name-field){align-items:start}.form-row:has(.name-field)>:first-child{padding-top:8px}
 
 .unsaved-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px}
+
+.picture-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.picture-option{display:flex;align-items:center;justify-content:center;min-width:0;padding:8px;border:1px solid rgb(var(--REACTOR-color-border));border-radius:8px;background:rgb(var(--REACTOR-color-background));cursor:pointer}
+.picture-option:hover,.picture-option-selected{border-color:rgb(var(--REACTOR-color-accent));background:rgb(var(--REACTOR-color-background-secondary))}
+.picture-option-selected{box-shadow:inset 0 0 0 1px rgb(var(--REACTOR-color-accent))}
+.picture-option:focus-visible{outline:2px solid rgb(var(--REACTOR-color-accent));outline-offset:2px}
+.picture-option img{width:100%;height:88px;object-fit:contain}
+@media(max-width:600px){.picture-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
