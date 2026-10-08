@@ -39,4 +39,4 @@ html,body,#root{min-height:100%;margin:0}html,body{overflow-y:auto}#root{overflo
 
 .page-title-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.storefront-link-body{display:flex;flex-direction:column;gap:16px;min-width:0}
 
-.page-secondary-actions{display:flex;align-items:center;justify-content:flex-start;padding-top:8px}
+.page-secondary-actions{display:flex;align-items:center;justify-content:flex-start}
