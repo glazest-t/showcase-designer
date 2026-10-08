@@ -23,7 +23,6 @@ export default function StorefrontLink(){
   <InfoDialogWindow header="Ссылка на витрину" state={[open,setOpen]} footer={<Button type="primary" text={status==='Ссылка скопирована'?'Скопировано':'Скопировать ссылку'} disabled={copying} onClick={copy}/>}>
    <div className="storefront-link-body">
     <Text text="Отправьте ссылку гостям или разместите её на сайте. По ней откроется вся витрина услуг."/>
-    {!configuredUrl&&<Text text="Пример ссылки для прототипа. Адрес вашей витрины пока не подключён." typography="caption"/>}
     <Field value={storefrontUrl} onChange={()=>{}} aria-label="Ссылка на витрину" onFocus={event=>event.target.select()}/>
     {status&&<div role="status"><Text text={status} typography="caption"/></div>}
    </div>
