@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text,Button,Icon,Switch,Tile,TileHeader,Link,Badge,InfoDialogWindow,ActionMenu,WarningDialogWindow} from '@reactor/reactor';
+import {Text,PageTop,Button,Icon,Switch,Tile,TileHeader,Link,Badge,InfoDialogWindow,ActionMenu,WarningDialogWindow} from '@reactor/reactor';
 import {Table} from '@reactor/table';
 import {services} from './data';
 import ServiceDetails from './ServiceDetails';
@@ -16,7 +16,7 @@ export default function MainPage({sections,setSections,onEdit,onSaved}){
  const title=(text,subtitle,actions)=><TileHeader text={text} subtitle={<Text text={subtitle} typography="promo-paragraph"/>} actions={actions}/>;
  return <>
   <main className="page">
-   <div className="page-heading"><Text text="Настройки показа" typography="page-title"/><Text text="Задайте структуру и наполнение витрины, чтобы помочь гостям найти нужную услугу" typography="subtitle"/><div className="page-secondary-actions"><StorefrontLink/></div></div>
+   <PageTop title="Настройки показа" subtitle={<div className="page-description"><Text text="Задайте структуру и наполнение витрины, чтобы помочь гостям найти нужную услугу" typography="subtitle"/><div className="page-secondary-actions"><StorefrontLink/></div></div>}/>
    <div className="main-tile sections-tile"><Tile header={title('Разделы','Кнопки быстрого перехода к предложениям на витрине',<Button icon="add" text="Создать раздел" onClick={()=>onEdit()}/>)}>
     <Table key={JSON.stringify(sections.map(s=>s.name))} width="100%" fixed draggable stickyNoTop head={{key:'sections-head',cells:[{content:'Видимость',width:108},{content:'Раздел',width:'39.23%'},{content:'Привязано услуг'},{content:'Действие',width:193,hAlign:'right'}]}} rows={sections.map((s,i)=>({key:s.name,cells:[
       <Switch hint={sectionHint} accent={s.visible} selected={s.visible} onClick={()=>{setSections(prev=>prev.map((v,j)=>i===j?{...v,visible:!v.visible}:v));onSaved()}}/>,

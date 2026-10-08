@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button,Field,InfoDialogWindow,Text} from '@reactor/reactor';
+import {Button,Field,InfoDialogWindow,Text,Link} from '@reactor/reactor';
 
 // Keep the guest address separate from the designer's URL.
 const configuredUrl=import.meta.env.VITE_STOREFRONT_URL?.trim();
@@ -19,7 +19,7 @@ export default function StorefrontLink(){
   }finally{setCopying(false)}
  }
  return <>
-  <Button type="link" text="Получить ссылку на витрину" onClick={()=>{setStatus('');setOpen(true)}}/>
+  <Link text="Получить ссылку на витрину" onClick={()=>{setStatus('');setOpen(true)}}/>
   <InfoDialogWindow header="Ссылка на витрину" state={[open,setOpen]} footer={<Button type="primary" text={status==='Ссылка скопирована'?'Скопировано':'Скопировать ссылку'} disabled={copying} onClick={copy}/>}>
    <div className="storefront-link-body">
     <Text text="Отправьте ссылку гостям или разместите её на сайте. По ней откроется вся витрина услуг."/>

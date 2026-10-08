@@ -6,7 +6,7 @@ html,body,#root{min-height:100%;margin:0}html,body{overflow-y:auto}#root{overflo
 #reactor-app-portal [class*="_scope_"]:has(> [class*="_target_"] > :is([class*="_popup_"],[class*="_hint_"])){z-index:1500}
 
 /* Main page: Figma 409:28512. Sidebar form styles stay separate. */
-.page{padding:32px;gap:24px}.page-heading{display:flex;flex-direction:column;gap:16px;margin-bottom:8px}
+.page{padding:32px;gap:24px}.page-description{display:flex;flex-direction:column;gap:8px}
 .main-tile{min-width:0}.main-tile table{border:1px solid rgb(var(--REACTOR-color-border))}
 .main-tile thead tr{height:48px}.sections-tile tbody tr{height:52px}.feed-tile tbody tr{height:56px}
 .main-tile td,.main-tile th{vertical-align:middle}.main-tile>div>div:last-child{padding-bottom:32px}
@@ -40,3 +40,4 @@ html,body,#root{min-height:100%;margin:0}html,body{overflow-y:auto}#root{overflo
 .page-title-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.storefront-link-body{display:flex;flex-direction:column;gap:16px;min-width:0}
 
 .page-secondary-actions{display:flex;align-items:center;justify-content:flex-start}
+.page-secondary-actions>a{white-space:nowrap;flex-shrink:0}
