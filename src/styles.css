@@ -41,3 +41,5 @@ html,body,#root{min-height:100%;margin:0}html,body{overflow-y:auto}#root{overflo
 
 .page-secondary-actions{display:flex;align-items:center;justify-content:flex-start}
 .page-secondary-actions>a{white-space:nowrap;flex-shrink:0}
+
+.storefront-copy-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
