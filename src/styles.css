@@ -38,3 +38,5 @@ html,body,#root{min-height:100%;margin:0}html,body{overflow-y:auto}#root{overflo
 @media(max-width:600px){.picture-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
 .page-title-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.storefront-link-body{display:flex;flex-direction:column;gap:16px;min-width:0}
+
+.page-secondary-actions{display:flex;align-items:center;justify-content:flex-start;padding-top:8px}

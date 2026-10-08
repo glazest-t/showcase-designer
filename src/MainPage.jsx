@@ -16,7 +16,7 @@ export default function MainPage({sections,setSections,onEdit,onSaved}){
  const title=(text,subtitle,actions)=><TileHeader text={text} subtitle={<Text text={subtitle} typography="promo-paragraph"/>} actions={actions}/>;
  return <>
   <main className="page">
-   <div className="page-heading"><div className="page-title-row"><Text text="Настройки показа" typography="page-title"/><StorefrontLink/></div><Text text="Задайте структуру и наполнение витрины, чтобы помочь гостям найти нужную услугу" typography="subtitle"/></div>
+   <div className="page-heading"><Text text="Настройки показа" typography="page-title"/><Text text="Задайте структуру и наполнение витрины, чтобы помочь гостям найти нужную услугу" typography="subtitle"/></div>
    <div className="main-tile sections-tile"><Tile header={title('Разделы','Кнопки быстрого перехода к предложениям на витрине',<Button icon="add" text="Создать раздел" onClick={()=>onEdit()}/>)}>
     <Table key={JSON.stringify(sections.map(s=>s.name))} width="100%" fixed draggable stickyNoTop head={{key:'sections-head',cells:[{content:'Видимость',width:108},{content:'Раздел',width:'39.23%'},{content:'Привязано услуг'},{content:'Действие',width:193,hAlign:'right'}]}} rows={sections.map((s,i)=>({key:s.name,cells:[
       <Switch hint={sectionHint} accent={s.visible} selected={s.visible} onClick={()=>{setSections(prev=>prev.map((v,j)=>i===j?{...v,visible:!v.visible}:v));onSaved()}}/>,
@@ -31,6 +31,7 @@ export default function MainPage({sections,setSections,onEdit,onSaved}){
      {content:<Button icon="eye" text="Детали" onClick={()=>setDetails(s)}/>,hAlign:'right'}
     ]}))}/>
    </Tile></div>
+   <div className="page-secondary-actions"><StorefrontLink/></div>
   </main>
   <WarningDialogWindow header="Удалить раздел?" state={[deleting!==null,v=>{if(!v)setDeleting(null)}]} actions={{primary:{text:'Удалить',onClick:()=>{setSections(prev=>prev.filter(s=>s!==deleting));setDeleting(null);onSaved()}},cancel:{text:'Отмена'}}}><Text text={'Раздел «'+(deleting?.name??'')+'» будет удалён. Привязанные услуги останутся в каталоге и ленте.'}/></WarningDialogWindow>
   {details&&<ServiceDetails key={details.id} service={details} onClose={()=>setDetails(null)} onSave={updated=>{setFeed(prev=>prev.map(s=>s.id===updated.id?updated:s));setDetails(updated);onSaved()}}/>}
