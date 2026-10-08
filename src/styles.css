@@ -36,3 +36,5 @@ html,body,#root{min-height:100%;margin:0}html,body{overflow-y:auto}#root{overflo
 .picture-option:focus-visible{outline:2px solid rgb(var(--REACTOR-color-accent));outline-offset:2px}
 .picture-option img{width:100%;height:88px;object-fit:contain}
 @media(max-width:600px){.picture-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.page-title-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.storefront-link-body{display:flex;flex-direction:column;gap:16px;min-width:0}
