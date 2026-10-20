@@ -46,5 +46,5 @@ export default function SectionServicesTable({services,selected,onToggle,onReord
  if(!['ArrowUp','ArrowDown'].includes(e.key))return;
  e.preventDefault();const target=visible[index+(e.key==='ArrowUp'?-1:1)];
  if(target)onReorder(reorderVisibleServices(selected,visible,s.id,target));
- }}><Icon name="more-vert"/></CoreButton>}]:[]),<Checkbox label={s.name} value={selected.includes(s.id)} onChange={()=>onToggle(s.id)}/>,s.group]}))}/>;
+ }}><Icon name="more-vert"/></CoreButton>}]:[]),<Checkbox label={s.name} value={selected.includes(s.id)} onChange={()=>onToggle(s.id)}/>,s.group?.trim()||'—']}))}/>;
 }
