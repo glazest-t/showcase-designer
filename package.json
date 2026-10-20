@@ -13,6 +13,7 @@
     "@reactor/reactor": "^0.0.226",
     "@reactor/table": "^0.0.154",
     "@vitejs/plugin-react": "5.0.4",
+    "qrcode": "^1.5.4",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "sass-embedded": "^1.105.1",

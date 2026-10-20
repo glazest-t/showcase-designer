@@ -50,3 +50,5 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Opening section editing selects «Добавленные» services by default; creating a section selects «Все услуги».
 
 - «Не прогрузилась страница» replaces main-page data, description and actions with a borderless loading error and reload action; preserve navigation and page title.
+
+- Rename guest sharing link/dialog to «Поделиться витриной». Include a QR preview and «Скачать QR-код» PNG action for the same configured guest URL; generate locally, without third-party QR services.

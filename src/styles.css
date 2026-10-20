@@ -55,3 +55,5 @@ html,body,#root{min-height:100%;margin:0}html,body{overflow-y:auto}#root{overflo
 .services-load-error{display:flex;align-items:center;gap:24px;padding:8px 0}.services-load-error-copy{display:flex;flex-direction:column;gap:16px;min-width:0}
 
 .services-load-error-tile{border:none}
+
+.storefront-qr-row{display:flex;align-items:center;gap:24px}.storefront-qr-preview{flex-shrink:0;object-fit:contain}.storefront-qr-copy{display:flex;flex-direction:column;gap:12px;min-width:0}@media(max-width:600px){.storefront-qr-row{flex-direction:column;align-items:flex-start}}
