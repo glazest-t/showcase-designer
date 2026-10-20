@@ -48,3 +48,5 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Prototype variant «Не прогрузились услуги» applies to section creation and editing: disable name/icon/save controls, replace services content with an error and «Обновить страницу», and omit unavailable service counts.
 
 - Opening section editing selects «Добавленные» services by default; creating a section selects «Все услуги».
+
+- «Не прогрузилась страница» replaces main-page data, description and actions with a borderless loading error and reload action; preserve navigation and page title.

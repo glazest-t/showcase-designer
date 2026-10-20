@@ -7,10 +7,11 @@ import StorefrontLink from './StorefrontLink';
 
 const feedNames=['Завтрак «Шведский стол»','Вход в термальную зону','Парковка','Аренда квадроцикла','Обед комплексный'];
 
-export default function MainPage({sections,setSections,onEdit,onSaved}){
+export default function MainPage({loadError=false,sections,setSections,onEdit,onSaved}){
  const [feed,setFeed]=useState(feedNames.map((name,i)=>({id:String(i),name,visible:true})));
  const [details,setDetails]=useState(null);
  const [deleting,setDeleting]=useState(null);
+ if(loadError)return <main className="page"><PageTop title="Настройки показа"/><Tile decoration={["services-load-error-tile"]}><div className="services-load-error" role="alert"><Icon name="block" size="xl" color="danger"/><div className="services-load-error-copy"><Text text="Не удалось загрузить страницу" typography="section-title"/><Text text="Обновите страницу. Если ошибка повторится, обратитесь в техподдержку."/><div><Button text="Обновить страницу" onClick={()=>window.location.reload()}/></div></div></div></Tile></main>;
  const sectionHint="Скроет раздел с витрины. Привязанные к нему услуги останутся видны в ленте";
  const serviceHint="Скроет услугу только из ленты. В разделах она останется видна гостям";
  const title=(text,subtitle,actions)=><TileHeader text={text} subtitle={<Text text={subtitle} typography="promo-paragraph"/>} actions={actions}/>;
