@@ -52,3 +52,5 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - «Не прогрузилась страница» replaces main-page data, description and actions with a borderless loading error and reload action; preserve navigation and page title.
 
 - Rename guest sharing link/dialog to «Поделиться витриной». Include a QR preview and «Скачать QR-код» PNG action for the same configured guest URL; generate locally, without third-party QR services.
+
+- «Нет ни одной услуги» replaces main-page tables/actions with a centered neutral service icon, «Нет подключённых услуг» and an explanation that services appear after connection. Based on Figma 1441:10988; distinct from empty sections.
