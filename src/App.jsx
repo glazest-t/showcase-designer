@@ -17,7 +17,7 @@ function Prototype(){
  const [iconError,setIconError]=useState(''),[validationAttempt,setValidationAttempt]=useState(0);
  useEffect(()=>{if(!validationAttempt||confirm||!open)return;const frame=requestAnimationFrame(()=>{const container=error?nameField.current:iconError?iconField.current:null;const control=container?.querySelector('input,button,[tabindex]');control?.focus();control?.scrollIntoView({block:'center',behavior:'instant'});});return()=>cancelAnimationFrame(frame)},[validationAttempt,confirm,open]);
  const signature=JSON.stringify([name,pic,selected]);
- const reset=(s=null,i=null)=>{const n=s?.name||'',p=s?.pic||'',ids=s?.ids||[];setName(n);setPic(p);setSelected(ids);saved.current=JSON.stringify([n,p,ids]);setGroup('Все группы');setQuery('');setView('all');setPicker(false);setError('');setIconError('');setValidationAttempt(0);setEdit(i);setOpen(true)};
+ const reset=(s=null,i=null)=>{const n=s?.name||'',p=s?.pic||'',ids=s?.ids||[];setName(n);setPic(p);setSelected(ids);saved.current=JSON.stringify([n,p,ids]);setGroup('Все группы');setQuery('');setView(s?'selected':'all');setPicker(false);setError('');setIconError('');setValidationAttempt(0);setEdit(i);setOpen(true)};
  useEffect(()=>{saved.current=JSON.stringify(['','',[]])},[]);
  useEffect(()=>{if(!toast)return;const t=setTimeout(()=>setToast(''),5000);return()=>clearTimeout(t)},[toast]);
  const requestClose=value=>{if(value){setOpen(true);return}if(signature!==saved.current)setConfirm(true);else setOpen(false)};

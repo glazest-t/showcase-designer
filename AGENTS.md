@@ -46,3 +46,5 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Added section services can be reordered using drag handles or arrow keys on the «Добавленные» tab. Persist the order in section.ids; filtered reorder changes visible slots only. Reordering is an unsaved change and must survive saving/reopening.
 
 - Prototype variant «Не прогрузились услуги» applies to section creation and editing: disable name/icon/save controls, replace services content with an error and «Обновить страницу», and omit unavailable service counts.
+
+- Opening section editing selects «Добавленные» services by default; creating a section selects «Все услуги».
